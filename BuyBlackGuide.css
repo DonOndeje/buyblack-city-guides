@@ -1,0 +1,296 @@
+/* BuyBlack City Guide React Component Styles */
+
+.buyblack-guide {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+}
+
+.header p {
+  margin: 0;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.chat-section, .search-section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chat-section h3, .search-section h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.chat-container {
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: white;
+  text-align: right;
+  margin-left: 20%;
+}
+
+.bot-message {
+  background-color: #e9ecef;
+  color: #333;
+  margin-right: 20%;
+}
+
+.loading {
+  font-style: italic;
+  color: #666;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chat-input button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.chat-input button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quick-action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.quick-action-btn:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+}
+
+.quick-action-btn:nth-child(2) {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.quick-action-btn:nth-child(3) {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.quick-action-btn:nth-child(4) {
+  background-color: #6f42c1;
+  color: white;
+}
+
+.quick-action-btn:hover {
+  opacity: 0.8;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-controls select,
+.search-controls input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.search-controls input {
+  flex: 1;
+  min-width: 150px;
+}
+
+.search-controls button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-controls button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.search-controls button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.business-results {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.business-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  transition: box-shadow 0.2s;
+}
+
+.business-card:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.business-name {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.business-type {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.business-address {
+  color: #888;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+}
+
+.business-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.business-card a:hover {
+  text-decoration: underline;
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-controls {
+    flex-direction: column;
+  }
+  
+  .search-controls input {
+    min-width: auto;
+  }
+  
+  .user-message {
+    margin-left: 10%;
+  }
+  
+  .bot-message {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .buyblack-guide {
+    padding: 10px;
+  }
+  
+  .header {
+    padding: 20px 10px;
+  }
+  
+  .header h1 {
+    font-size: 2em;
+  }
+  
+  .chat-section, .search-section {
+    padding: 20px;
+  }
+}

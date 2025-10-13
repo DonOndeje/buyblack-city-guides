@@ -1,0 +1,92 @@
+# buyblack-city-guide
+
+---
+
+- **Purpose:** To empower users to explore U.S. cities through the lens of Black culture and entrepreneurship. The agency helps users plan trips, discover Black-owned businesses, attend local events, and creates personalized itineraries that celebrate community, culture, and connection.
+- **Communication Flows:**
+  - **Between Agents:**
+    - The agency starts with three specialized collaborating agents:
+      - **City Explorer Agent → Itinerary Planner Agent:** City Explorer gathers, ranks, and supplies businesses/experiences. Itinerary Planner structures personalized plans based on user input and discovery results.
+      - **Itinerary Planner Agent → Cultural Curator Agent:** Itinerary Planner sends draft plans; Cultural Curator enhances with context, historical info, and narratives.
+      - **City Explorer Agent → Cultural Curator Agent:** Explorer provides business/event finds; Curator supplements with cultural highlights or stories.
+  - **Agent to User Communication:**
+    - Uses a friendly, local, knowledgeable tone, like a well-traveled friend.
+    - Conversational guidance ("Let’s explore Atlanta’s food scene!")
+    - Lists of recommendations with brief, engaging summaries
+    - Optional day-by-day itineraries
+    - Directions, links, or booking options (if available)
+    - Concludes with prompts for further engagement ("Would you like a shareable itinerary?")
+
+---
+
+## City Explorer Agent
+
+### **Role within the Agency**
+Discovers and recommends Black-owned businesses, restaurants, events, and cultural landmarks in U.S. cities, filtering by user’s category, interest, or keywords.
+
+### Tools
+- **BuyBlackDirectorySearch:**
+  - **Description**: Query the BuyBlack.org business directory API (or local CSV if provided) for businesses by location and category.
+  - **Inputs**:
+    - city (str) – The city to search
+    - category (str) – e.g., restaurant, shop, event
+    - keywords (str, optional) – further refine results
+  - **Validation:**
+    - City must exist and query must not return empty; handle API/connection errors.
+  - **Core Functions:**
+    - Fetch and filter business results
+    - Format output (type, address, hours, description)
+  - **APIs**: BuyBlack.org (if available, fallback to local data), Google Places, Yelp
+  - **Output**: List of businesses/locations (JSON or display string)
+
+- **LandmarkDiscovery:**
+  - **Description**: Find cultural landmarks using OpenTripMap or similar APIs.
+  - **Inputs**: city (str), type (str)
+  - **Validation**: Valid city and type required.
+  - **Core Functions:** Query, filter, and summarize landmarks.
+  - **APIs**: OpenTripMap
+  - **Output**: List with name, location, brief description.
+
+---
+
+## Itinerary Planner Agent
+
+### **Role within the Agency**
+Builds trip itineraries based on user input (city, days, budget, interests), incorporating findings from the City Explorer and enhancement from the Cultural Curator.
+
+### Tools
+- **ItineraryBuilder:**
+  - **Description**: Generates a structured day-by-day plan optimized for user preferences and timing.
+  - **Inputs**:
+    - city (str), days (int), interests (list[str]), budget (str, optional)
+    - selected locations/events (list)
+  - **Validation:**
+    - Must have at least one location and one day.
+  - **Core Functions:**
+    - Organize, calendar/time-slot allocation, optimize travel sequence.
+  - **APIs**: Internal logic; calendar/time slots as possible.
+  - **Output**: JSON or natural language itinerary; ready for rendering.
+
+---
+
+## Cultural Curator Agent
+
+### **Role within the Agency**
+Adds cultural, historical, and storytelling context—fact cards, background info, or featured narratives for trip finds.
+
+### Tools
+- **CulturalStoryFetcher:**
+  - **Description**: Fetches background info or stories on businesses/events/landmarks using a knowledge base, articles, or external info.
+  - **Inputs**:
+    - business/location id (str), topic (str, optional)
+  - **Validation:**
+    - Must have a valid target (matched business/location/event).
+  - **Core Functions:**
+    - Query knowledge sources, extract relevant context, assemble narrative.
+  - **APIs**: Wikipedia, BuyBlack.org blog, local event archives
+  - **Output**: Paragraph or fact card (display text/JSON)
+
+---
+
+
+Modify this PRD if you’d like to refine, then let me know when to proceed with agent and tool buildout.

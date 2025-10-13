@@ -1,0 +1,17 @@
+# Core dependencies
+agency-swarm>=1.1.0
+openai>=1.107.1
+python-dotenv>=1.1.1
+pandas>=2.0.0
+requests>=2.31.0
+pydantic>=2.11.0
+
+# Web interface
+gradio>=5.0.0
+
+# Optional: For production deployment
+gunicorn>=21.0.0
+uvicorn>=0.23.0
+
+# Optional: For Docker deployment
+# No additional requirements needed

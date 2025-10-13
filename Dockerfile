@@ -40,7 +40,8 @@ COPY --from=builder /install /usr/local
 # Copy source code
 COPY ./ .
 
-EXPOSE 8080
+EXPOSE 7860
 
-CMD ["python", "-u", "main.py"]
+# Use web app for deployment
+CMD ["python", "-u", "web_app.py"]
     
