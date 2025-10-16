@@ -5,7 +5,7 @@ import os
 import requests
 import json
 
-class BuyBlackDirectorySearch(BaseTool):
+class BuyBlackDirectorySearch(BaseTool): 
     """
     Search Oakland Black-owned businesses from the provided CSV file by category, keyword, or business type.
     """
