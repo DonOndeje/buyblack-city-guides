@@ -2,6 +2,9 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.agency]
+version = "1.0.0"
+
 [project]
 name = "buyblack-city-guides"
 version = "1.0.0"
@@ -116,6 +119,3 @@ python_classes = ["Test*"]
 python_functions = ["test_*"]
 addopts = "-v --tb=short"
 asyncio_mode = "auto"
-
-[tool.agency]
-version = "1.0.0"
