@@ -2,10 +2,9 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.agency]
-name = "buyblack-city-guides"
-version = "1.0.0"
-entrypoint = "agency:create_agency"
+tool.agency.name = "buyblack-city-guides"
+tool.agency.version = "1.0.0"
+tool.agency.entrypoint = "agency:create_agency"
 
 [project]
 name = "buyblack-city-guides"
