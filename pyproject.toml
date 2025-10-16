@@ -3,8 +3,12 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.agency]
+name = "city-agent"
 version = "0.1.0"
-entrypoint = "main.py"
+description = "An AI-powered city guide agent for discovering Black-owned businesses and cultural experiences."
+entrypoint = "main:app"
+license = "MIT"
+tags = ["travel", "culture", "city-guides", "ai", "black-owned-businesses","cultural-curator"]
 
 [project]
 name = "buyblack-city-guides"

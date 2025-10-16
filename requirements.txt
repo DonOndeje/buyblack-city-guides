@@ -1,6 +1,0 @@
-agency-swarm[fastapi]>=1.0.2
-fastapi
-uvicorn
-pandas
-requests
-python-dotenv
