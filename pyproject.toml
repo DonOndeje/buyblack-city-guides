@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.agency]
-version = "1.0.0"
+version = "0.1.0"
 entrypoint = "main.py"
 
 [project]
