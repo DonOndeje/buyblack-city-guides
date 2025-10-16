@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.agency]
 version = "1.0.0"
+entrypoint = "main.py"
 
 [project]
 name = "buyblack-city-guides"
@@ -11,11 +12,14 @@ version = "1.0.0"
 description = "AI-powered city guides for discovering Black-owned businesses and cultural experiences"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = { text = "MIT" }
+
 authors = [
-    {name = "BuyBlack", email = "contact@buyblack.com"},
+    { name = "BuyBlack", email = "contact@buyblack.com" },
 ]
+
 keywords = ["ai", "city-guides", "black-owned-businesses", "travel", "culture"]
+
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
@@ -71,7 +75,6 @@ target-version = ['py38']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
-  # directories
   \.eggs
   | \.git
   | \.hg
@@ -117,4 +120,3 @@ python_classes = ["Test*"]
 python_functions = ["test_*"]
 addopts = "-v --tb=short"
 asyncio_mode = "auto"
-
