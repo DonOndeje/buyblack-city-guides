@@ -72,7 +72,6 @@ def create_agency(load_threads_callback=None):
         city_explorer,  # Entry point
         itinerary_planner,
         cultural_curator,
-        name="BuyBlackCityGuide",
         shared_instructions="shared_instructions.md",
         load_threads_callback=load_threads_callback,
     )
