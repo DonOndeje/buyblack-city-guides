@@ -8,7 +8,7 @@ pydantic>=2.11.0
 
 # Web interface
 gradio>=5.0.0
-
+      
 # Optional: For production deployment
 gunicorn>=21.0.0
 uvicorn>=0.23.0
