@@ -69,15 +69,9 @@ response_cache = ResponseCache()
 # Optimized communication flows for faster responses
 def create_agency(load_threads_callback=None):
     agency = Agency(
-        city_explorer,  # Entry point for user communication
+        city_explorer,  # Entry point
         itinerary_planner,
         cultural_curator,
-        communication_flows=[
-            # Direct communication only when needed
-            (city_explorer, itinerary_planner),  # For trip planning requests
-            (city_explorer, cultural_curator),   # For cultural context requests
-            # Remove circular dependencies for faster processing
-        ],
         name="BuyBlackCityGuide",
         shared_instructions="shared_instructions.md",
         load_threads_callback=load_threads_callback,

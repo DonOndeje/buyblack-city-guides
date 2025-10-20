@@ -81,3 +81,7 @@ class BuyBlackDirectorySearchSimple(BaseTool):
 if __name__ == "__main__":
     tool = BuyBlackDirectorySearchSimple(category="bakery", keyword="", limit=3)
     print(tool.run())
+
+# Backwards-compatible class name expected by Agency Swarm ToolFactory
+class BuyBlackDirectorySearch(BuyBlackDirectorySearchSimple):
+    pass

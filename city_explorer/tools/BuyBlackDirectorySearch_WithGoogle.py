@@ -5,7 +5,7 @@ import os
 import requests
 import json
 
-class BuyBlackDirectorySearch(BaseTool): 
+class BuyBlackDirectorySearch_WithGoogle(BaseTool): 
     """
     Search Oakland Black-owned businesses from the provided CSV file by category, keyword, or business type.
     """
@@ -133,5 +133,5 @@ class BuyBlackDirectorySearch(BaseTool):
             return {}
 
 if __name__ == "__main__":
-    tool = BuyBlackDirectorySearch(category="bakery", keyword="", limit=3)
+    tool = BuyBlackDirectorySearch_WithGoogle(category="bakery", keyword="", limit=3)
     print(tool.run())
