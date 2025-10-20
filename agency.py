@@ -68,13 +68,48 @@ response_cache = ResponseCache()
 
 # Optimized communication flows for faster responses
 def create_agency(load_threads_callback=None):
-    agency = Agency(
-        city_explorer,  # Entry point
-        agents=[itinerary_planner, cultural_curator],
-        shared_instructions="shared_instructions.md",
-        load_threads_callback=load_threads_callback,
-    )
+    """Create Agency with backwards-compatible constructor handling."""
+    # Preferred (newer) signature
+    try:
+        agency = Agency(
+            city_explorer,  # entry agent
+            agents=[itinerary_planner, cultural_curator],
+            shared_instructions="shared_instructions.md",
+            load_threads_callback=load_threads_callback,
+        )
+        return agency
+    except TypeError:
+        pass
 
+    # Older signature: positional agents, no 'agents=' kw
+    try:
+        agency = Agency(
+            city_explorer,
+            itinerary_planner,
+            cultural_curator,
+        )
+        # Try to set shared instructions if supported
+        if hasattr(agency, "shared_instructions"):
+            try:
+                agency.shared_instructions = "shared_instructions.md"
+            except Exception:
+                pass
+        return agency
+    except TypeError:
+        pass
+
+    # Minimal fallback: just entry agent, then attach if methods exist
+    agency = Agency(city_explorer)
+    if hasattr(agency, "add_agents"):
+        try:
+            agency.add_agents([itinerary_planner, cultural_curator])
+        except Exception:
+            pass
+    if hasattr(agency, "shared_instructions"):
+        try:
+            agency.shared_instructions = "shared_instructions.md"
+        except Exception:
+            pass
     return agency
 
 if __name__ == "__main__":
