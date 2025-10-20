@@ -98,7 +98,7 @@ if __name__ == "__main__":
     demo.launch(
         server_name="0.0.0.0",  # Allow external access
         server_port=7860,       # Default Gradio port
-        share=False,            # Set to True for public sharing
+        share=True,            # Set to True for public sharing
         debug=True
     )
 

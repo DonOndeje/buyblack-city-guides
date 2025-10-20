@@ -1,5 +1,5 @@
 # Core dependencies
-agency-swarm[fastapi]>=1.2.1
+agency-swarm[fastapi]
 openai>=1.107.1
 python-dotenv>=1.1.1
 pandas>=2.0.0
